@@ -1,0 +1,265 @@
+﻿@model IEnumerable<Duty>
+
+
+@{
+    int currentPage = ViewBag.Page ?? 1;
+    int totalPages = ViewBag.TotalPages ?? 1;
+
+    List<int> OptionsRecordsPerPage = [10, 20, 30, 50];
+}
+
+<div class="db-content-box bg-white round-10 mb-25 pb-3" style="padding: 10px">
+
+    <div class="db-content-box-header d-flex flex-wrap align-items-center justify-content-between mb-30">
+        <h4 class="fs-17 fw-bold text-title fw-extrabold mb-sm-10 mb-md-0 w-75">Welcome to Task List</h4>
+        <a href="/Home/Create" class="tb-btn style-one font-secondary fs-14 fw-semibold d-inline-block border-0 text-white round-5 transition">Create Task</a>
+    </div>
+
+    <div class="row mb-20">
+        <div class="col-md-6">
+            <div class="fs-13 text-para d-flex align-items-center mb-10">
+                <span>Displays</span>
+                <select id="recordsPerPage" class="form-control fs-13 select_box bg-transparent text-para mx-md-3 mx-2 outline-0">
+                    @foreach (var option in OptionsRecordsPerPage)
+                    {
+                        @if (ViewBag.RecordsPerPage == option)
+                        {
+                            <option value="@option" selected>@option</option>
+                        }
+                        else
+                        {
+                            <option value="@option">@option</option>
+                        }
+                    }
+                </select>
+                <span>Records Per Page</span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="select_input d-flex align-items-center justify-content-md-end mb-10">
+                <span class="fs-13 me-2">Search:</span>
+                <input type="search"
+                       id="taskSearch"
+                       class="bg-transparent fs-13 text-para outline-0 border px-2 py-1 rounded"
+                       placeholder="Search tasks..." />
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <div class="db-table table-responsive">
+        <table class="table text-nowrap align-middle mb-30 table-hover" id="taskTable">
+            <thead>
+                <tr>
+                    <th scope="col" class="text-title bg-ash fw-semibold fs-13">
+                        #
+                    </th>
+                    <th scope="col" class="text-title bg-ash fw-bold fs-13">
+                        Title
+                    </th>
+                    <th scope="col" class="text-title fw-bold fs-13">
+                        Description
+                    </th>
+                    <th scope="col" class="text-title fw-bold fs-13">
+                        Priority
+                    </th>
+                    <th scope="col" class="text-title fw-bold fs-13">
+                        Date
+                    </th>
+                    <th scope="col" class="text-title fw-bold fs-13">
+                        Time
+                    </th>
+                    <th scope="col" class="text-title fw-bold fs-13">
+                        Satus
+                    </th>
+                    <th scope="col" class="text-title fw-bold fs-13 text-center">
+                        Action
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    int counter = ((ViewBag.Page - 1) * (ViewBag.RecordsPerPage)) + 1;
+                }
+                @foreach(var item in Model)
+                {
+                    <tr>
+                        <td class="fs-13 lh-1 text-para">@(counter++)</td>
+
+                        <td>
+                            <span class="fs-13 lh-1 text-para">@item.Title</span>
+                        </td>
+
+                        <td>
+                            <span class="fs-13 lh-1 text-para">@item.Description</span>
+                        </td>
+
+                        <td>
+                            @{
+                                if (item.Priority == Duty.PriorityLevel.High)
+                                {
+                                    <span class="fs-13 lh-1  badge text-bg-danger">@item.Priority</span>
+                                }
+                                if (item.Priority == Duty.PriorityLevel.Medium)
+                                {
+                                    <span class="fs-13 lh-1 badge text-bg-warning">@item.Priority</span>
+                                }
+                                if (item.Priority == Duty.PriorityLevel.Low)
+                                {
+                                    <span class="fs-13 lh-1 badge text-bg-info">@item.Priority</span>
+                                }
+                                
+                            }
+                            
+                            
+                        </td>
+
+                        <td>
+                            <span class="fs-13 lh-1 text-para">@item.Date</span>
+                        </td>
+
+                        <td>
+                            <span class="fs-13 lh-1 text-para">@item.Time</span>
+                        </td>
+
+                        <td>
+
+                            <input id="toggle-@item.Id"
+                                   type="checkbox"
+                            @(item.Status ? "checked" : "")
+                                   data-toggle="toggle"
+                                   data-on="Completed"
+                                   data-off="Pending"
+                                   data-onstyle="success"
+                                   data-offstyle="danger"
+                                   onchange="toggleStatus(@item.Id, this.checked)" />
+
+                        </td>
+                        <td>
+                            <div class="button-group d-flex flex-wrap align-items-center justify-content-center">
+
+                                <a href="/Home/Edit/@item.Id">
+                                    <img src="~/icons/edit.svg" alt="Icon">
+                                </a>
+
+
+                                <a href="javascript:void(0);" onclick="confirmDelete(@item.Id)">
+                                    <img src="~/icons/delete.svg" alt="Delete Icon">
+                                </a>
+
+
+                                @* <a href="/Home/View/@item.Id"> *@
+                                @*     <img src="~/icons/view.svg" alt="Image"> *@
+                                @* </a> *@
+
+                            </div>
+                        </td>
+                    </tr>
+                }
+
+               
+            </tbody>
+        </table>
+
+        <ul class="db-pagination pagination ms-auto justify-content-end mb-0 pb-3">
+
+            <!-- Previous Button -->
+            <li class="page-item @(currentPage == 1 ? "disabled" : "")">
+                <a class="page-link" href="/?Page=@(currentPage - 1)&RecordsPerPage=@ViewBag.RecordsPerPage" aria-label="Previous">
+                    <i class="ri-arrow-left-s-line"></i>
+                </a>
+            </li>
+
+            <!-- Page Numbers -->
+            @for (int x = 1; x <= totalPages; x++)
+            {
+                <li class="page-item @(x == currentPage ? "active" : "")">
+                    <a class="page-link" href="/?Page=@x&RecordsPerPage=@ViewBag.RecordsPerPage">@x</a>
+                </li>
+            }
+
+            <!-- Next Button -->
+            <li class="page-item @(currentPage == totalPages ? "disabled" : "")">
+                <a class="page-link" href="/?Page=@(currentPage + 1)&RecordsPerPage=@ViewBag.RecordsPerPage" aria-label="Next">
+                    <i class="ri-arrow-right-s-line"></i>
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+</div>
+
+<script>
+    function confirmDelete(id) {
+        Swal.fire({
+            title: "Are you sure you want to delete this task?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Optional: show a follow-up confirmation
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Your task has been deleted.",
+                    icon: "success",
+                    timer: 1500,
+                    showConfirmButton: false
+                });
+
+                // Redirect to delete action
+                setTimeout(() => {
+                    window.location.href = `/Home/Delete/${id}`;
+                }, 1500); // Wait for the alert to finish
+            }
+        });
+    }
+</script>
+
+<script>
+    document.getElementById('recordsPerPage').addEventListener('change', function () {
+        const selectedValue = this.value;
+        const baseUrl = "/";
+        window.location.href = `${baseUrl}?RecordsPerPage=${selectedValue}`;
+    });
+</script>
+
+<script>
+    function toggleStatus(id, status) {
+        const formData = new URLSearchParams();
+        formData.append('id', id);
+
+        fetch('/Home/ToggleStatus', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: formData.toString()
+        })
+
+    }
+</script>
+<script>
+    document.getElementById('taskSearch').addEventListener('input', function () {
+        const searchTerm = this.value.toLowerCase();
+        const rows = document.querySelectorAll('#taskTable tbody tr');
+
+        rows.forEach(row => {
+            const cells = row.querySelectorAll('td');
+            const rowText = Array.from(cells).map(td => td.textContent.toLowerCase()).join(' ');
+            row.style.display = rowText.includes(searchTerm) ? '' : 'none';
+        });
+    });
+</script>
+
+
+

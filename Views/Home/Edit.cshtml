@@ -1,0 +1,130 @@
+﻿@model Duty
+
+<div class="filter-box round-20">
+    <h2 class="fs-36 fw-extrabold text-title mb-20">Edit Task</h2>
+    <form id="EditTaskForm" method="post" class="form-wrapper" action="/Home/Edit">
+        <input type="hidden" readonly name="id" value="@Model.Id" class="form-group" />
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group position-relative mb-30">
+                    <span>Title</span>
+                    <input type="text" required class="mb-30 fs-xx-14 w-100 h-54 round-10 bg-ash text-para border-0" name="Title" value="@Model.Title">
+                    <img src="~/icons/person-gray.svg" alt="Icon">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group position-relative mb-30">
+                    <span>Description</span>
+                    <input type="text" required class="mb-30 fs-xx-14 w-100 h-54 round-10 bg-ash text-para border-0" name="Description" value="@Model.Description">
+                    <img src="~/icons/person-gray.svg" alt="Icon">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group position-relative mb-30">
+                    <span>Date</span>
+                    <input type="date"
+                    class="mb-30 date-picker fs-xx-14 w-100 h-54 round-10 bg-ash text-para border-0"
+                    name="Date"
+                    required
+                    id="futureDate"
+                    value="@Model.Date.ToString("yyyy-MM-dd")" />
+                    <img src="~/icons/calendar.svg" alt="Icon">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group position-relative mb-30">
+                    <label> Time </label>
+                    <input type="time"
+                    name="Time"
+                    class="fs-xx-14 w-100 h-54 round-10 bg-ash text-para border-0"
+                    style="height: 54px;"
+                    required
+                    value="@Model.Time.ToString("HH:mm")">
+                </div>
+            </div>
+
+            <input type="hidden" readonly name="Status" value="@Model.Status.ToString()" class="form-group" />
+
+            <div class="col-md-6">
+                <div class="form-group position-relative mb-30">
+                    <span>Priority</span>
+                    <select name="priority" id="priority" class="fs-xx-14 w-100 ht-56 round-10 bg-ash text-para border-0">
+                        <option value="">Select Priority</option>
+                        @{
+                           
+                                if (Model.Priority == Duty.PriorityLevel.High)
+                                {
+                                    <option value="High" selected="High">High</option>
+                                }
+                                else
+                                {
+                                    <option value="High">High</option>
+                                }
+
+                                 if (Model.Priority == Duty.PriorityLevel.Medium)
+                                {
+                                    <option value="Medium" selected="Medium">Medium</option>
+                                }
+                                else
+                                {
+                                    <option value="Medium">Medium</option>
+                                }
+
+                                if (Model.Priority == Duty.PriorityLevel.Low)
+                                {
+                                    <option value="Low" selected="Low">Low</option>
+                                }
+                                else
+                                {
+                                    <option value="Low">Low</option>
+                                }
+
+                        }
+                      
+                     
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!--Sweet Alerts-->
+
+
+        <template id="task-success-template">
+            <swal-title>Task Edit</swal-title>
+            <swal-html>
+                Your task has been successfully updated!
+            </swal-html>
+            <swal-icon type="success"></swal-icon>
+        </template>
+
+        <button type="submit" class="btn style-two font-secondary fw-medium d-block w-100 position-relative z-1 round-6 d-block w-100">
+            <span>
+                Save Task
+                <img src="~/icons/right-arrow-white.svg" alt="Icon" class="transition icon-left">
+            </span>
+            <img src="~/icons/right-arrow-white.svg" alt="Icon" class="transition icon-right">
+        </button>
+    </form>
+</div>
+
+
+<script>
+    document.getElementById("EditTaskForm").addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent default form submission initially
+
+        Swal.fire({
+            template: '#task-success-template',
+            timer: 1500,
+            showConfirmButton: false,
+        });
+
+        // Submit the form after the alert closes
+        setTimeout(() => {
+            document.getElementById("EditTaskForm").submit();
+        }, 1500);
+    });
+</script>

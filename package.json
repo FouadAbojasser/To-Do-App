@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "bootstrap-toggle": "^2.2.2",
+    "sweetalert2": "^11.6.13"
+  }
+}

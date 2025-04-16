@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="zxx">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Link of CSS files -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+        <link rel="stylesheet" href="assets/css/aos.css">
+        <link rel="stylesheet" href="assets/css/remixicon.css">
+        <link rel="stylesheet" href="assets/css/flaticon_hinton.css">
+        <link rel="stylesheet" href="assets/css/header.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/dashboard.css">
+        <link rel="stylesheet" href="assets/css/footer.css">
+        <link rel="stylesheet" href="assets/css/responsive.css">
+        <link rel="stylesheet" href="assets/css/dark-theme.css">
+
+        <title>Hinton - Doctors & Hospital Directory HTML Template</title>
+        <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    </head>
+    <body>
+
+        <!--  Preloader Start -->
+        <div class="preloader-area d-flex flex-column align-items-center justify-content-center h-100" id="preloader">
+            <span class="d-block stethoscope-icon"><i class="ri-stethoscope-line"></i></span>
+            <span class="text-primary mt-2 fw-medium">Loading...</span>
+        </div>
+        <!--  Preloader End -->
+
+        <!-- Custom Cursor -->
+        <div class="cursor style-one"></div>
+        <div class="cursor-inner style-one"></div>
+
+        <!-- Dashboard Start -->
+        <div class="db-wrapper bg-ash overflow-hidden">
+            <div class="db-sidebar transition">
+                <a href="index.html" class="logo">
+                    <img src="assets/img/logo.png" alt="Logo" class="logo-light">
+                    <img src="assets/img/logo-white.png" alt="Logo" class="logo-dark">
+                </a>
+                <ul class="db-sidebar-menu list-unstyled mb-0">
+                    <li class="menu-item has-dropdown position-relative">
+                        <span class="parent transition"><img src="assets/img/icons/stethoscope.svg" alt="Icon">Doctors Dashboard</span>
+                        <ul class="dropdown list-unstyled mb-0">
+                            <li class="dropdown-item position-relative fs-14"><a href="db-doctors-dashboard.html">Doctors Dashboard</a></li>
+                            <li class="dropdown-item position-relative fs-14"><a href="db-doctors-list.html">Doctors List</a></li>
+                            <li class="dropdown-item position-relative fs-14"><a href="db-doctors-card.html">Doctors Card</a></li>
+                            <li class="dropdown-item position-relative fs-14"><a href="db-doctor-profile.html">Doctor Profile</a></li>
+                            <li class="dropdown-item position-relative fs-14"><a href="db-add-doctor.html">Add Doctor</a></li>
+                            <li class="dropdown-item position-relative fs-14"><a href="db-edit-doctor.html">Edit Doctor</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-dropdown position-relative">
+                        <span class="parent transition"><img src="assets/img/icons/patient.svg" alt="Icon">Patients Dashboard</span>
+                        <ul class="dropdown list-unstyled mb-0">
+                            <li class="dropdown-item position-relative fs-14"><a href="db-patients-dashboard.html">Patients Dashboard</a></li>
+                            <li class="dropdown-item position-relative fs-14"><a href="db-patients-list.html">Patients List</a></li>
+                            <li class="dropdown-item position-relative fs-14"><a href="db-add-patient.html">Add Patient</a></li>
+                            <li class="dropdown-item position-relative fs-14"><a href="db-edit-patient-details.html">Edit Patient Details</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-dropdown position-relative">
+                        <span class="parent transition"><img src="assets/img/icons/hospital.svg" alt="Icon">Hospital Dashboard</span>
+                        <ul class="dropdown list-unstyled mb-0">
+                            <li class="dropdown-item position-relative fs-14"><a href="db-hospital-dashboard.html">Hospital Dashboard</a></li>
+                            <li class="dropdown-item position-relative fs-14"><a href="db-doctors.html">Doctors</a></li>
+                           <li class="dropdown-item position-relative fs-14"><a href="db-employees.html">Employees</a></li>
+                            <li class="dropdown-item position-relative fs-14"><a href="db-attendance.html">Attendance</a></li>
+                            <li class="dropdown-item position-relative fs-14"><a href="db-leaves.html">Leaves</a></li>
+                            <li class="dropdown-item position-relative fs-14"><a href="db-salary.html">Salary</a></li>
+                            <li class="dropdown-item position-relative fs-14"><a href="db-department.html">Department</a></li>
+                            <li class="dropdown-item position-relative fs-14"><a href="db-services.html">Services</a></li>
+                            <li class="dropdown-item position-relative fs-14"><a href="db-role-access.html">Role Access</a></li>
+                            <li class="dropdown-item position-relative fs-14"><a href="db-holidays.html">Holidays</a></li>
+                            <li class="dropdown-item position-relative fs-14"><a href="db-my-activities.html">My Activities</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-dropdown position-relative active">
+                        <span class="parent transition"><img src="assets/img/icons/appointments.svg" alt="Icon">Appointments</span>
+                        <ul class="dropdown list-unstyled mb-0">
+                            <li class="dropdown-item position-relative fs-14"><a href="db-appointments.html">Appointments</a></li>
+                            <li class="dropdown-item position-relative fs-14"><a href="db-appointment-list.html" class="active">Appointment List</a></li>
+                            <li class="dropdown-item position-relative fs-14"><a href="db-book-appointment.html">Book Appointment</a></li>
+                            <li class="dropdown-item position-relative fs-14"><a href="db-edit-appointment.html">Edit Appointment</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item fs-14 position-relative">
+                        <a href="db-chat.html"><span class="parent transition"><img src="assets/img/icons/chat.svg" alt="Icon">Chat</span></a>
+                    </li>
+                    <li class="menu-item fs-14 position-relative">
+                        <a href="db-notification.html"><span class="parent transition"><img src="assets/img/icons/bell.svg" alt="Icon">Notification</span></a>
+                    </li>
+                    <li class="menu-item fs-14 position-relative">
+                        <a href="index.html"><span class="parent transition"><img src="assets/img/icons/logout.svg" alt="Icon">Logout</span></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="db-main transition pb-30">
+                <div id="navbar" class="db-header bg-white navbar-area transition">
+                    <div class="row align-items-center">
+                        <div class="col-lg-5">
+                            <div class="db-header-left d-flex flex-wrap align-items-center">
+                                <button class="db-burger-menu bg-ash d-none d-xl-flex flex-column align-items-center justify-content-center  transition lh-1 round-5 p-0 border-0">
+                                    <img src="assets/img/icons/sidebar-btn.svg" alt="Image">
+                                </button>
+                                <form action="#" class="db-searchbox position-relative">
+                                    <input type="search" placeholder="Search here..." class="bg-ash fs-14 text-para border-0 round-5 w-100 fs-14 outline-0">
+                                    <button class="border-0 bg_secondary d-flex flex-column align-items-center justify-content-center position-absolute top-0 end-0 p-0 text-white transition"><i class="ri-search-line"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="db-header-right d-flex flex-wrap align-items-center justify-content-lg-end justify-content-center">
+                                <div class="language-selector position-relative d-inline-block">
+                                    <div class="selected-language d-flex align-items-center" id="selected-language">
+                                        <span class="flag-container rounded-circle">
+                                            <img src="assets/img/dashboard/flag/uk.png" alt="US Flag" class="rounded-circle">
+                                        </span>
+                                        <span class="lang-name fs-14 text-title">English</span>
+                                    </div>
+                                    <div class="dropdown" id="dropdown">
+                                        <div class="dropdown-item" data-lang="en" data-flag="assets/img/dashboard/flag/uk.png">
+                                            <span class="flag-container rounded-circle">
+                                                <img src="assets/img/dashboard/flag/uk.png" alt="US Flag" class="rounded-circle">
+                                            </span>
+                                            <span class="lang-name fs-14 text-title">English</span>
+                                        </div>
+                                        <div class="dropdown-item" data-lang="fr" data-flag="assets/img/dashboard/flag/france.png">
+                                            <span class="flag-container rounded-circle">
+                                                <img src="assets/img/dashboard/flag/france.png" alt="US Flag" class="rounded-circle">
+                                            </span>
+                                            <span class="lang-name fs-14 text-title">French</span>
+                                        </div>
+                                        <div class="dropdown-item" data-lang="ar" data-flag="assets/img/dashboard/flag/uae.png">
+                                            <span class="flag-container rounded-circle">
+                                                <img src="assets/img/dashboard/flag/uae.png" alt="French Flag" class="rounded-circle">
+                                            </span>
+                                            <span class="lang-name fs-14 text-title">Arabic</span>
+                                        </div>
+                                        <div class="dropdown-item" data-lang="ch" data-flag="assets/img/dashboard/flag/china.png">
+                                            <span class="flag-container rounded-circle">
+                                                <img src="assets/img/dashboard/flag/china.png" alt="Spanish Flag" class="rounded-circle">
+                                            </span>
+                                            <span class="lang-name fs-14 text-title">Chinese</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="db-switch-theme border-0 bg-transparent p-0 round-5">
+                                    <label id="switch" class="db-switch">
+                                        <input type="checkbox" onchange="toggleTheme()" id="slider">
+                                        <span class="slider"></span>
+                                    </label>
+                                </button>
+                                <a class="db-chat bg-ash d-flex flex-column align-items-center justify-content-center round-5" href="db-chat.html">
+                                    <img src="assets/img/icons/mail-3.svg" alt="Icon">
+                                </a>
+                                <div class="db-notification position-relative">
+                                    <button class="dropdown-toggle d-flex flex-column align-items-center justify-content-center position-relative bg-ash border-0 round-5 p-0 transition" type="button" data-bs-toggle="dropdown" aria-expanded="true">
+                                        <img src="assets/img/icons/bell-2.svg" alt="Bell Icon" class="notif-btn">
+                                        <span class="d-flex flex-column align-items-center justify-content-center rounded-circle bg_primary text-white  fs-12 position-absolute">3</span>
+                                    </button>
+                                    <div class="dropdown-menu top-1 border-0" data-bs-popper="static">
+                                        <h3 class="fs-18 fw-semibold mb-15">Notification</h3>
+                                        <ul class="list-unstyled mb-0">
+                                            <li class="position-relative unread">
+                                                <p class="fs-15 fw-semibold font_secondary text-title">You have <span>3</span> new messages</p>
+                                                <span class="fs-14 text-para d-block">2 hours ago</span>
+                                            </li>
+                                            <li class="position-relative read">
+                                                <p class="fs-15 fw-semibold font_secondary text-title">You have <span>4</span> new messages</p>
+                                                <span class="fs-14 text-para d-block">3 hours ago</span>
+                                            </li>
+                                            <li class="position-relative read">
+                                                <p class="fs-15 fw-semibold font_secondary text-title">You have <span>3</span> new messages</p>
+                                                <span class="fs-14 text-para d-block">1 day ago</span>
+                                            </li>
+                                        </ul>
+                                        <a href="db-notification.html" class="fs-14 fw-medium mx-auto text_primary text-center d-block mt-3">View All</a>
+                                    </div>
+                                </div>
+                                <div class="db-user-option position-relative">
+                                    <button class="dropdown-toggle d-flex flex-wrap p-0 position-relative w-100 bg-transparent border-0 text-start p-0 transition" type="button" data-bs-toggle="dropdown" aria-expanded="true">
+                                        <span class="d-flex flex-wrap align-items-center">
+                                            <span class="user-avatar rounded-circle">
+                                                <img src="assets/img/dashboard/user.png" alt="User Avatar" class="rounded-circle">
+                                            </span>
+                                            <span class="fs-14 text_primary d-none d-md-block lh-1">
+                                                Admin
+                                                <strong class="d-block fs-16 font-secondary fw-bold text-title mt-2">Nora Davis</strong>
+                                            </span>
+                                        </span>
+                                    </button>
+                                    <div class="dropdown-menu top-1 start-0 border-0">
+                                        <ul class="list-unstyled mb-0">
+                                            <li><a href="db-doctor-profile.html" class="transition"><i class="ri-user-3-line"></i>My Profile</a></li>
+                                            <li><a href="db-edit-doctor.html" class="transition"><i class="ri-edit-2-line"></i>Edit Profile</a></li>
+                                            <li><a href="index.html" class="transition"><i class="ri-logout-box-r-line"></i>Logout</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <button class="db-mobile-menu bg-ash d-flex flex-column align-items-center justify-content-center d-xl-none transition lh-1 round-5 ms-3 p-0 border-0 lg-none">
+                                    <img src="assets/img/icons/sidebar-btn.svg" alt="Image">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="db-content-wrapper">
+                    <div class="db-breadcrumb-area">
+                        <div class="row align-items-center">
+                            <div class="col-md-5 mb-sm-10">
+                                <h6 class="fs-17 fw-bold mb-0">Appointment List</h6>
+                            </div>
+                            <div class="col-md-7">
+                                <ul class="db-breadcrumb-menu list-unstyled mb-0 text-md-end">
+                                    <li><a href="db-hospital-dashboard.html">Dashboard</a></li>
+                                    <li>Appointment List</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="db-content-box bg-white round-10 mb-25 pb-3">
+                        <div class="db-content-box-header d-flex flex-wrap align-items-center justify-content-between mb-30">
+                            <h4 class="fs-17 fw-bold text-title fw-extrabold mb-sm-10 mb-md-0 w-75">Appointments List</h4>
+                            <a href="db-book-appointment.html" class="tb-btn style-one font-secondary fs-14 fw-semibold d-inline-block border-0 text-white round-5 transition">Book Appointment</a>
+                        </div>
+                        <div class="row mb-20">
+                            <div class="col-md-6">
+                                <div class="fs-13 text-para d-flex align-items-center mb-10">
+                                    <span>Displays</span>
+                                    <select class="form-control fs-13 select_box bg-transparent text-para mx-md-3 mx-2 outline-0">
+                                        <option value="1">8</option>
+                                        <option value="1">10</option>
+                                        <option value="1">15</option>
+                                        <option value="1">20</option>
+                                    </select>
+                                    <span>Records Per Page</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="select_input d-flex align-items-center justify-content-md-end mb-10">
+                                    <span class="fs-13 me-2">Search:</span>
+                                    <input type="search" class="bg-transparent fs-13 text-para bg-transparent outline-0">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="db-table table-responsive">
+                            <table class="table text-nowrap align-middle mb-30">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="text-title bg-ash fw-semibold fs-13">
+                                            #
+                                        </th>
+                                        <th scope="col" class="text-title bg-ash fw-bold fs-13">
+                                            Patient Name 
+                                        </th>
+                                        <th scope="col" class="text-title fw-bold fs-13">
+                                            Age 
+                                        </th>
+                                        <th scope="col" class="text-title fw-bold fs-13">
+                                            Consulting Doctor 
+                                        </th>
+                                        <th scope="col" class="text-title fw-bold fs-13">
+                                            Department 
+                                        </th>
+                                        <th scope="col" class="text-title fw-bold fs-13">
+                                            Date 
+                                        </th>
+                                        <th scope="col" class="text-title fw-bold fs-13">
+                                            Time 
+                                        </th>
+                                        <th scope="col" class="text-title fw-bold fs-13">
+                                            Disease 
+                                        </th>
+                                        <th scope="col" class="text-title fw-bold fs-13 text-end">
+                                            Action 
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="fs-13 lh-1 text-para">001</td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">Deena Cooley</span>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">65</span>
+                                        </td>
+                                        <td>
+                                            <div class="db-doc_card d-flex align-items-center product-item">
+                                                <div class="doc-img rounded-circle"><img src="assets/img/dashboard/doctors/doctor-1.png" alt="Doctor" class="rounded-circle"></div>
+                                                <a href="db-doctor-profile.html" class="fs-13 lh-1 text-para hover-text-primary">Taylor Melon</a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">Surgeon</span>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">05/23/2025</span>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">9:30 AM</span>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">Diabetis</span>
+                                        </td>
+                                        <td>
+                                            <div class="button-group d-flex flex-wrap align-items-center justify-content-end">
+                                                <button class="border-0 bg-transparent p-0 delete-btn">
+                                                    <img src="assets/img/dashboard/icons/delete.svg" alt="Icon">
+                                                </button>
+                                                <a href="db-edit-doctor.html">
+                                                    <img src="assets/img/dashboard/icons/edit.svg" alt="Icon">
+                                                </a> 
+                                                <a href="db-doctor-profile.html">
+                                                    <img src="assets/img/dashboard/icons/view.svg" alt="Image">
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fs-13 lh-1 text-para">002</td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">Jerry Wilconx</span>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">73</span>
+                                        </td>
+                                        <td>
+                                            <div class="db-doc_card d-flex align-items-center product-item">
+                                                <div class="doc-img rounded-circle"><img src="assets/img/dashboard/doctors/doctor-2.png" alt="Doctor" class="rounded-circle"></div>
+                                                <a href="db-doctor-profile.html" class="fs-13 lh-1 text-para hover-text-primary">Ronald Sullivan</a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">Gynocologist</span>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">05/23/2025</span>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">9:45 AM</span>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">Fever</span>
+                                        </td>
+                                        <td>
+                                            <div class="button-group d-flex flex-wrap align-items-center justify-content-end">
+                                                <button class="border-0 bg-transparent p-0 delete-btn">
+                                                    <img src="assets/img/dashboard/icons/delete.svg" alt="Icon">
+                                                </button>
+                                                <a href="db-edit-doctor.html">
+                                                    <img src="assets/img/dashboard/icons/edit.svg" alt="Icon">
+                                                </a> 
+                                                <a href="db-doctor-profile.html">
+                                                    <img src="assets/img/dashboard/icons/view.svg" alt="Image">
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fs-13 lh-1 text-para">003</td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">Eduwardo kamer</span>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">84</span>
+                                        </td>
+                                        <td>
+                                            <div class="db-doc_card d-flex align-items-center product-item">
+                                                <div class="doc-img rounded-circle"><img src="assets/img/dashboard/doctors/doctor-3.png" alt="Doctor" class="rounded-circle"></div>
+                                                <a href="db-doctor-profile.html" class="fs-13 lh-1 text-para hover-text-primary">George Bailey</a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">Psychiatrist</span>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">05/23/2025</span>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">10:00 AM</span>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">Cold</span>
+                                        </td>
+                                        <td>
+                                            <div class="button-group d-flex flex-wrap align-items-center justify-content-end">
+                                                <button class="border-0 bg-transparent p-0 delete-btn">
+                                                    <img src="assets/img/dashboard/icons/delete.svg" alt="Icon">
+                                                </button>
+                                                <a href="db-edit-doctor.html">
+                                                    <img src="assets/img/dashboard/icons/edit.svg" alt="Icon">
+                                                </a> 
+                                                <a href="db-doctor-profile.html">
+                                                    <img src="assets/img/dashboard/icons/view.svg" alt="Image">
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fs-13 lh-1 text-para">#004</td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">Jason Compton</span>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">56</span>
+                                        </td>
+                                        <td>
+                                            <div class="db-doc_card d-flex align-items-center product-item">
+                                                <div class="doc-img rounded-circle"><img src="assets/img/dashboard/doctors/doctor-4.png" alt="Doctor" class="rounded-circle"></div>
+                                                <a href="db-doctor-profile.html" class="fs-13 lh-1 text-para hover-text-primary">Bshton Cozei</a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">Oncologist</span>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">05/23/2025</span>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">10:15 AM</span>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">Prostate Cancer</span>
+                                        </td>
+                                        <td>
+                                            <div class="button-group d-flex flex-wrap align-items-center justify-content-end">
+                                                <button class="border-0 bg-transparent p-0 delete-btn">
+                                                    <img src="assets/img/dashboard/icons/delete.svg" alt="Icon">
+                                                </button>
+                                                <a href="db-edit-doctor.html">
+                                                    <img src="assets/img/dashboard/icons/edit.svg" alt="Icon">
+                                                </a> 
+                                                <a href="db-doctor-profile.html">
+                                                    <img src="assets/img/dashboard/icons/view.svg" alt="Image">
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fs-13 lh-1 text-para">#005</td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">Emitt Brayan</span>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">49</span>
+                                        </td>
+                                        <td>
+                                            <div class="db-doc_card d-flex align-items-center product-item">
+                                                <div class="doc-img rounded-circle"><img src="assets/img/dashboard/doctors/doctor-5.png" alt="Doctor" class="rounded-circle"></div>
+                                                <a href="db-doctor-profile.html" class="fs-13 lh-1 text-para hover-text-primary">Allan Stuart</a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">Cardiology</span>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">05/23/2025</span>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">10:00AM</span>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">Asthema</span>
+                                        </td>
+                                        <td>
+                                            <div class="button-group d-flex flex-wrap align-items-center justify-content-end">
+                                                <button class="border-0 bg-transparent p-0 delete-btn">
+                                                    <img src="assets/img/dashboard/icons/delete.svg" alt="Icon">
+                                                </button>
+                                                <a href="db-edit-doctor.html">
+                                                    <img src="assets/img/dashboard/icons/edit.svg" alt="Icon">
+                                                </a> 
+                                                <a href="db-doctor-profile.html">
+                                                    <img src="assets/img/dashboard/icons/view.svg" alt="Image">
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fs-13 lh-1 text-para">006</td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">Truman Miles</span>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">90</span>
+                                        </td>
+
+                                        <td>
+                                            <div class="db-doc_card d-flex align-items-center product-item">
+                                                <div class="doc-img rounded-circle"><img src="assets/img/dashboard/doctors/doctor-6.png" alt="Doctor" class="rounded-circle"></div>
+                                                <a href="db-doctor-profile.html" class="fs-13 lh-1 text-para hover-text-primary">Smith White</a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">Peditrician</span>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">05/23/2025</span>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">10:45 AM</span>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">Cholera</span>
+                                        </td>
+                                        <td>
+                                            <div class="button-group d-flex flex-wrap align-items-center justify-content-end">
+                                                <button class="border-0 bg-transparent p-0 delete-btn">
+                                                    <img src="assets/img/dashboard/icons/delete.svg" alt="Icon">
+                                                </button>
+                                                <a href="db-edit-doctor.html">
+                                                    <img src="assets/img/dashboard/icons/edit.svg" alt="Icon">
+                                                </a> 
+                                                <a href="db-doctor-profile.html">
+                                                    <img src="assets/img/dashboard/icons/view.svg" alt="Image">
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fs-13 lh-1 text-para">007</td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">Dillon Stokes</span>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">36</span>
+                                        </td>
+                                        <td>
+                                            <div class="db-doc_card d-flex align-items-center product-item">
+                                                <div class="doc-img rounded-circle"><img src="assets/img/dashboard/doctors/doctor-7.png" alt="Doctor" class="rounded-circle"></div>
+                                                <a href="db-doctor-profile.html" class="fs-13 lh-1 text-para hover-text-primary">Meera Gill</a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">Gynocologist</span>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">10/23/2025</span>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">11:00 AM</span>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">Heart</span>
+                                        </td>
+                                        <td>
+                                            <div class="button-group d-flex flex-wrap align-items-center justify-content-end">
+                                                <button class="border-0 bg-transparent p-0 delete-btn">
+                                                    <img src="assets/img/dashboard/icons/delete.svg" alt="Icon">
+                                                </button>
+                                                <a href="db-edit-doctor.html">
+                                                    <img src="assets/img/dashboard/icons/edit.svg" alt="Icon">
+                                                </a> 
+                                                <a href="db-doctor-profile.html">
+                                                    <img src="assets/img/dashboard/icons/view.svg" alt="Image">
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fs-13 lh-1 text-para">008</td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">Haris Peters</span>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">36</span>
+                                        </td>
+                                        <td>
+                                            <div class="db-doc_card d-flex align-items-center product-item">
+                                                <div class="doc-img rounded-circle"><img src="assets/img/dashboard/doctors/doctor-8.png" alt="Doctor" class="rounded-circle"></div>
+                                                <a href="db-doctor-profile.html" class="fs-13 lh-1 text-para hover-text-primary">Gilbert Sandoval</a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">Urologist</span>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">10/23/2025</span>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">06:00 PM</span>
+                                        </td>
+                                        <td>
+                                            <span class="fs-13 lh-1 text-para">Outbreaks</span>
+                                        </td>
+                                        <td>
+                                            <div class="button-group d-flex flex-wrap align-items-center justify-content-end">
+                                                <button class="border-0 bg-transparent p-0 delete-btn">
+                                                    <img src="assets/img/dashboard/icons/delete.svg" alt="Icon">
+                                                </button>
+                                                <a href="db-edit-doctor.html">
+                                                    <img src="assets/img/dashboard/icons/edit.svg" alt="Icon">
+                                                </a> 
+                                                <a href="db-doctor-profile.html">
+                                                    <img src="assets/img/dashboard/icons/view.svg" alt="Image">
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <ul class="db-pagination pagination ms-auto justify-content-end mb-0 pb-3">
+                                <li class="page-item">
+                                    <a class="page-link" href="db-appointment-list.html" aria-label="Previous">
+                                        <i class="ri-arrow-left-s-line"></i>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link active" href="db-doctors-list.html">1</a></li>
+                                <li class="page-item"><a class="page-link" href="db-appointment-list.html">2</a></li>
+                                <li class="page-item"><a class="page-link" href="db-appointment-list.html">3</a></li>
+                                <li class="page-item"><a class="page-link" href="db-appointment-list.html">4</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="db-appointment-list.html" aria-label="Next">
+                                        <i class="ri-arrow-right-s-line"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="db-footer-area bg-white">
+                    <p class="fs-13 copyright-text text-center mb-0"><i class="ri-copyright-line"></i> <span class="text_primary fw-medium">Hinton</span> Is Proudly Powered By <a href="https://envytheme.com/" target="_blank" class="text_primary link-hover-primary">EnvyTheme</a></p>
+                </div>
+            </div>
+        </div>
+        <!-- Dashboard End -->
+     
+        <!-- Back to Top -->
+        <div id="progress-wrap" class="progress-wrap style-one">
+            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+              <path id="progress-path" d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+            </svg>
+        </div>
+
+        <!-- Link of JS files -->
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/megamenu.js"></script>
+        <script src="assets/js/swiper-bundle.min.js"></script>
+        <script src="assets/js/fslightbox.js"></script>
+        <script src="assets/js/gsap.min.js"></script>
+        <script src="assets/js/scrollTrigger.min.js"></script>
+        <script src="assets/js/SplitText.min.js"></script>
+        <script src="assets/js/customEase.js"></script>
+        <script src="assets/js/apexcharts.min.js"></script>
+        <script src="assets/js/chart.js"></script>
+        <script src="assets/js/dashboard-chart.js"></script>
+        <script src="assets/js/aos.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
