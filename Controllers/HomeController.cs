@@ -59,7 +59,7 @@ namespace To_Do_App.Controllers
                 return View(duty);
             }
 
-            return RedirectToAction("NotFoundPage", "Home");
+            return RedirectToAction("NotFoundPage");
         }
 
         [HttpPost]
@@ -75,7 +75,7 @@ namespace To_Do_App.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            return RedirectToAction("NotFoundPage", "Home");
+            return RedirectToAction("NotFoundPage");
         }
 
         public IActionResult Delete(int id)
@@ -90,7 +90,7 @@ namespace To_Do_App.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            return RedirectToAction("NotFoundPage", "Home");
+            return RedirectToAction("NotFoundPage");
         }
 
         [HttpPost]
@@ -103,23 +103,14 @@ namespace To_Do_App.Controllers
                 _context.SaveChanges();
             }
 
-            return RedirectToAction("NotFoundPage", "Home");
+            return RedirectToAction("NotFoundPage");
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        public IActionResult NotFoundPage()
+        {
+            return View();
+        }
 
 
 
