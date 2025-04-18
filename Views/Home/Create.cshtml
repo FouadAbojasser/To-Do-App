@@ -76,20 +76,19 @@
         </button>
     </form>
 </div>
-
-
 <script>
     document.getElementById("CreateTaskForm").addEventListener("submit", function (e) {
-        e.preventDefault(); // Always prevent initially
-        {
-            Swal.fire({
-                template: '#task-success-template',
-                showConfirmButton: true,
-                confirmButtonText: 'OK',
-            }).then(() => {
-                // Submit the form manually after confirmation
-                document.getElementById("CreateTaskForm").submit();
-            });
-        }
+        e.preventDefault(); // Prevent default form submission initially
+
+        Swal.fire({
+            template: '#task-success-template',
+            timer: 1500,
+            showConfirmButton: false,
+        });
+
+        // Submit the form after the alert closes
+        setTimeout(() => {
+            document.getElementById("CreateTaskForm").submit();
+        }, 1500);
     });
 </script>
